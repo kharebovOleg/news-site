@@ -1,0 +1,1 @@
+<img src="local\templates\lp\images\pegeaut.webp" class="included_img">

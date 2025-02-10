@@ -1,0 +1,1 @@
+<img src="local\templates\lp\images\team.png" class="included_img">
