@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Главная", 
-		"\index.php", 
+		"\\index.php", 
 		Array(), 
 		Array(), 
 		"" 
@@ -17,6 +17,13 @@ $aMenuLinks = Array(
 	Array(
 		"Новости", 
 		"news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Песочница", 
+		"/sandbox.php", 
 		Array(), 
 		Array(), 
 		"" 

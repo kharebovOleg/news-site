@@ -1,0 +1,63 @@
+.range {
+    width: 200px;
+    height: 10px;
+    margin: 0;
+    border: 1px solid #ff6347;
+    border-radius: 3px;
+    appearance: none;
+    background-color:transparent;
+    background-image: linear-gradient(#ff6347, #ff6347); /* Используем градиент, поскольку размер фона можно задать только через background-image */
+    background-repeat: no-repeat; /* Отключаем повторение фона */
+    background-size: 0 100%; /* Этот параметр будем менять позже */
+}
+
+.range-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    max-width: 300px;
+}
+
+.range::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: #ff6347;
+    border-radius: 3px;
+    appearance: none;
+}
+.range::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: #ff6347;
+    border-radius: 3px;
+    appearance: none;
+    border: 0;
+}
+
+.output {
+    color: blueviolet;
+    font-size: 20px;
+    font-weight: bold;
+}
+.output-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.no-js .output {
+    display: none;
+}
+
+/* 
+    ВЕРТИКАЛЬНЫЙ СЛАЙДЕР
+ */
+
+ .center {
+    position: absolute;
+    left: 1300px;
+    margin-left: 30px;
+ }
+

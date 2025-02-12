@@ -19,7 +19,7 @@
         "left",
         [
             "NAV_OBJECT" => $arResult['NAV'],
-            "SEF_MODE" => "Y",
+            "SEF_MODE" => $arResult["SEF_MODE"],
         ],
         false
     );

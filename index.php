@@ -3,10 +3,7 @@
     $APPLICATION->SetTitle("Главная");
 
 /*
-    переименоать компоненты,
-    оптимизировать компоненты,
-    ответ формы,
-    добавить гит
+    оптимизировать компоненты
 */
 ?>
 
@@ -67,11 +64,7 @@
 		</div>
 		<div class="input_container">
 			<input type="tel" name="phone" id="phone" placeholder="Введите номер" required>
-            <script>
-                $(function() {
-                    $("#phone").mask("+7(999) 999-9999");
-                });
-            </script>
+            <script>$(function() {$("#phone").mask("+7(999) 999-9999");});</script>
             <p class='phone_validation_error hidden'>Неверно указан номер телефона.</p>
 		</div>
 	</div>

@@ -8,7 +8,6 @@ $APPLICATION->IncludeComponent(
     "my_namespace:detail_info", 
     "",
     [
-        "ORDER" => ['SORT' => 'ASC'],
         "FILTER" => ['CODE' => $_REQUEST['CODE']],
         "SELECT" => ["DETAIL_TEXT","NAME","ACTIVE_FROM"]
     ],

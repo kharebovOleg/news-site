@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 
 if (!CModule::IncludeModule('iblock')) {
@@ -10,19 +10,28 @@ class ListInfo extends CBitrixComponent {
 
     public function executeComponent()
     {
-        $this->getArrResult();
+        $this->arResult = $this->getArResult();
         $this->includeComponentTemplate();
     }
 
     function onPrepareComponentParams($arParams)
     {
+        // передаем значение из сессии
+        $arParams['ELEMENT_COUNT'] = $_SESSION['ELEMENT_COUNT'];
+
         $arParams['ELEMENT_COUNT'] = intval($arParams['ELEMENT_COUNT']);
+        if($arParams['ELEMENT_COUNT'] <= 0) $arParams['ELEMENT_COUNT'] = 3;
+
+        $arParams["SEF_MODE"] = trim($arParams["SEF_MODE"]);
+        if($arParams["SEF_MODE"] !== 'N') $arParams["SEF_MODE"] = 'Y';
+
         return $arParams;
     }
 
-    function getArrResult()
+    function getArResult()
     {
         $arParams = $this->arParams;
+        $arResult = [];
 
         $hasPagination = $arParams["SHOW_PAGINATION"] === 'Y';
 
@@ -54,7 +63,8 @@ class ListInfo extends CBitrixComponent {
         
         if($hasPagination) {
             $nav->setRecordCount($newsList->getCount());
-            $this->arResult['NAV'] = $nav;
+            $arResult['NAV'] = $nav;
+            $arResult["SEF_MODE"] = $arParams["SEF_MODE"];
         }
         
         $month = [
@@ -69,7 +79,9 @@ class ListInfo extends CBitrixComponent {
             $time = strtotime($element['ACTIVE_FROM']);
 
             $element['DATE'] = date('d', $time) . " " . $month[date('n', $time)] . " " . date('Yгода');
-            $this->arResult['RES'][] = $element;
+            $arResult['RES'][] = $element;
         }
+
+        return $arResult;
     }
 }

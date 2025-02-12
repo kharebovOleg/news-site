@@ -9,20 +9,16 @@ if (!CModule::IncludeModule('iblock')) {
 class DetailInfo extends CBitrixComponent {
     public function executeComponent()
     {
-        $this->getArResult();
+        $this->arResult = $this->getArResult();
         $this->includeComponentTemplate();
     }
 
     function getArResult() {
         $arParams = $this->arParams;
-
-        $order = ['SORT' => 'ASC'];
-        $filter = ['CODE' => $arParams['ELEMENT_CODE']];
-        $select = ["DETAIL_TEXT","NAME","ACTIVE_FROM"];
+        $arResult = [];
 
         $newsList = \Bitrix\Iblock\ElementTable::getList(
             [   
-                "order" => $arParams["ORDER"],
                 "filter" => $arParams["FILTER"],
                 "select" => $arParams["SELECT"]
             ]
@@ -39,6 +35,6 @@ class DetailInfo extends CBitrixComponent {
         $time = strtotime($arResult["ITEM"]['ACTIVE_FROM']);
         $arResult["ITEM"]["DATE"] = date('d', $time) . " " . $month[date('n', $time)] . " " . date('Yгода');
 
-        $this->arResult = $arResult;
+        return $arResult;
     }
 }

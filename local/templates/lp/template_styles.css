@@ -274,11 +274,11 @@ input::placeholder {
 .name_validation_error {
     color: rgba(208, 18, 70, 1);
     margin: 0 0 0 5px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .phone_validation_error {
     color: rgba(208, 18, 70, 1);
     margin: 0 0 0 5px;
-    font-size: 10px;
+    font-size: 12px;
 }
