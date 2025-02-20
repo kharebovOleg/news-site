@@ -7,7 +7,7 @@ $APPLICATION->SetTitle("Новости компании");?>
 	"my_namespace:list_info",
 	"nav",
 	[
-		"ELEMENT_COUNT" => 3,
+		"ELEMENT_COUNT" => $_SESSION['ELEMENT_COUNT'], // передаем значение из сессии
 		"SHOW_PAGINATION" => 'Y',
 		"ORDER" => ['SORT' => 'ASC'],
 		"FILTER" => ["IBLOCK_ID" => 1],

@@ -1,10 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     $APPLICATION->SetTitle("Главная");
-
-/*
-    оптимизировать компоненты
-*/
 ?>
 
 <div class="included_areas">
@@ -39,16 +35,28 @@
 </div>
 
 <div class="news_blocks">
-    <?
+    <?php
+        // $APPLICATION->IncludeComponent(
+        //     "my_namespace:list_info",
+        //     "",
+        //     [
+        //         "ELEMENT_COUNT" => $_SESSION['ELEMENT_COUNT'], // передаем значение из сессии
+        //         "SHOW_PAGINATION" => 'N',
+        //         "ORDER" => ['SORT' => 'ASC'],
+        //         "FILTER" => ["IBLOCK_ID" => 1],
+        //         "SELECT" => ["ID", "CODE", "IBLOCK_ID", "ACTIVE_FROM", "NAME", "PREVIEW_TEXT"]
+        //     ]
+        // );
+
         $APPLICATION->IncludeComponent(
-            "my_namespace:list_info",
+            "my_namespace:new_list",
             "",
             [
-                "ELEMENT_COUNT" => 6,
-                "SHOW_PAGINATION" => 'Y',
+                "IBLOCK_ID" => 1,
+                "ELEMENT_COUNT" => 6, // передаем значение из сессии
                 "ORDER" => ['SORT' => 'ASC'],
-                "FILTER" => ["IBLOCK_ID" => 1],
-                "SELECT" => ["ID", "CODE", "IBLOCK_ID", "ACTIVE_FROM", "NAME", "PREVIEW_TEXT"]
+                "FILTER" => [],
+                "SELECT" => ["ID", "CODE", "IBLOCK_ID", "ACTIVE_FROM", "NAME", "PREVIEW_TEXT", 'DETAIL_PAGE_URL' => 'IBLOCK.DETAIL_PAGE_URL']
             ]
         );
     ?>

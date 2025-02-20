@@ -1,0 +1,72 @@
+fieldset {
+  width: 620px;
+  margin: auto;
+}
+
+.range {
+    width: 200px;
+    height: 10px;
+    margin: 0;
+    background-color: rgba(103, 115, 135, 0.1);
+    border-radius: 3px;
+    appearance: none;
+  }
+  /* .range::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: #bb2509;
+    appearance: none;
+  }
+  .range::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: #bb2509;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+  } */
+
+.form_radio_btn {
+  display: inline-block;
+  margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+  display: none;
+}
+.form_radio_btn input[type=submit] {
+  display: none;
+}
+.form_radio_btn label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 15px;
+  line-height: 34px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  user-select: none;
+}
+
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+  background: rgba(103, 115, 135, 0.1);
+}
+.form_radio_btn input[type=submit]:checked + label {
+  background: rgba(103, 115, 135, 0.1);
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+  color: #666;
+}
+
+.cows_filter {
+  width: 600px;
+  display: flex;
+  margin: auto;
+}
+
+
+.big_button{
+  height: 100%;
+  text-align: center;
+}

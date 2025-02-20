@@ -11,8 +11,3 @@ $_SERVER['HTTP_REFERER'];
         <p class="news_text"><?=$arResult["ITEM"]['DETAIL_TEXT']?></p>
 	</div>
 </div>
-
-
-
-
-

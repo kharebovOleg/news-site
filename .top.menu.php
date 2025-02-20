@@ -27,6 +27,20 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Коровы", 
+		"cows/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поиск", 
+		"search/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>
